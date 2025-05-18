@@ -1,23 +1,44 @@
-/* Estilos generales (modo claro) */
-body, p, label, input, button, h1, .result, .footer-text {
-  transition: color 0.3s, background-color 0.3s;
-}
-
 body {
+  background: url('../image/foto-fondo.jpg') no-repeat center center fixed;
+  background-size: cover;
   font-family: Arial, sans-serif;
-  background-color: #f3f4f6;
   margin: 0;
   padding: 0 0 50px;
   color: #222;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+  background: url('../image/foto-fondo.jpg') no-repeat center center fixed;
+  background-size: cover;
+  background-color: rgba(0, 0, 0, 0.7);
+  background-blend-mode: darken;
+  color: #e0e0e0;
 }
 
 .container {
   max-width: 700px;
-  margin: 80px auto 50px;
-  background-color: #ffffff;
+  margin: 100px auto 60px;
+  background-color: rgba(255, 255, 255, 0.92);
   padding: 30px;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+body.dark-mode .container {
+  background-color: rgba(30, 30, 30, 0.92);
+}
+
+.logo-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.logo {
+  width: 120px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
 
 .questions label {
@@ -33,6 +54,12 @@ input[type="text"] {
   border-radius: 4px;
   background-color: #fff;
   color: #222;
+}
+
+body.dark-mode input[type="text"] {
+  background-color: #2a2a2a;
+  color: #e0e0e0;
+  border-color: #555;
 }
 
 button {
@@ -52,10 +79,8 @@ button:hover {
 .result {
   margin-top: 30px;
   font-size: 1.2em;
-  color: inherit;
 }
 
-/* Footer */
 .footer-text {
   position: fixed;
   bottom: 0;
@@ -70,12 +95,41 @@ button:hover {
   z-index: 1000;
 }
 
-/* Toggle switch (modo oscuro) */
+body.dark-mode .footer-text {
+  background-color: #0d6efd;
+}
+
+.fixed-title {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 1.2;
+  color: #007bff;
+  z-index: 1100;
+  user-select: none;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.fixed-title small {
+  font-weight: normal;
+  font-size: 0.8em;
+  color: #555;
+}
+
+body.dark-mode .fixed-title {
+  color: #66b0ff;
+}
+
+body.dark-mode .fixed-title small {
+  color: #bbb;
+}
+
 .switch {
   position: fixed;
   top: 15px;
   right: 15px;
-  display: inline-block;
   width: 50px;
   height: 28px;
   z-index: 1100;
@@ -97,8 +151,8 @@ button:hover {
 }
 
 .slider:before {
-  position: absolute;
   content: "";
+  position: absolute;
   height: 22px;
   width: 22px;
   left: 3px;
@@ -114,67 +168,4 @@ input:checked + .slider {
 
 input:checked + .slider:before {
   transform: translateX(22px);
-}
-
-.switch:hover .slider {
-  box-shadow: 0 0 5px #0d6efd;
-}
-
-/* Modo oscuro */
-body.dark-mode {
-  background-color: #121212;
-  color: #e0e0e0;
-}
-
-body.dark-mode .container {
-  background-color: #1e1e1e;
-}
-
-body.dark-mode input[type="text"] {
-  background-color: #2a2a2a;
-  color: #e0e0e0;
-  border-color: #555;
-}
-
-body.dark-mode button {
-  background-color: #0d6efd;
-  color: #fff;
-}
-
-body.dark-mode button:hover {
-  background-color: #0b5ed7;
-}
-
-body.dark-mode .footer-text {
-  background-color: #0d6efd;
-  color: white;
-}
-
-/* Título fijo a la izquierda */
-.fixed-title {
-  position: fixed;
-  top: 15px;
-  left: 15px;
-  font-weight: bold;
-  font-size: 20px;
-  line-height: 1.2;
-  color: #007bff;
-  user-select: none;
-  z-index: 1100;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.fixed-title small {
-  font-weight: normal;
-  font-size: 0.8em;
-  color: #555;
-}
-
-body.dark-mode .fixed-title {
-  color: #66b0ff;
-}
-
-body.dark-mode .fixed-title small {
-  color: #bbb;
 }

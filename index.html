@@ -8,28 +8,30 @@
 </head>
 <body>
 
-  <!-- Título fijo a la izquierda -->
   <div class="fixed-title">
     WH Question Validator <br />
     <small>(Present Continuous Negative)</small>
   </div>
 
-  <!-- Botón toggle modo claro/oscuro -->
   <label class="switch">
     <input type="checkbox" id="toggle-theme" />
     <span class="slider round"></span>
   </label>
 
   <div class="container">
+    <div class="logo-container">
+      <img src="image/logotc.png" alt="Logo" class="logo" />
+    </div>
+
     <p>Write 5 WH questions using the correct structure.</p>
 
     <form id="question-form">
       <div class="questions">
-        <label>Question 1: <input type="text" name="q1" required></label>
-        <label>Question 2: <input type="text" name="q2" required></label>
-        <label>Question 3: <input type="text" name="q3" required></label>
-        <label>Question 4: <input type="text" name="q4" required></label>
-        <label>Question 5: <input type="text" name="q5" required></label>
+        <label>Pregunta 1: <input type="text" name="q1" required></label>
+        <label>Pregunta 2: <input type="text" name="q2" required></label>
+        <label>Pregunta 3: <input type="text" name="q3" required></label>
+        <label>Pregunta 4: <input type="text" name="q4" required></label>
+        <label>Pregunta 5: <input type="text" name="q5" required></label>
       </div>
       <button type="submit">Validate</button>
     </form>
