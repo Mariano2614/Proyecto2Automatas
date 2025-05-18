@@ -1,43 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Proyecto ll Autómatas</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>WH Question Validator</title>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-    <div class="container">
-        <h2>Grupo 10 - Validación de preguntas WH &#40;Forma negativa&#41;</h2>
 
-        <form id="wh-form">
-            <label for="pregunta1"> Pregunta 1:</label>
-            <input type="text" id="pregunta1" placeholder="Why she is not studying?" required>
-            <br><br>
+  <!-- Título fijo a la izquierda -->
+  <div class="fixed-title">
+    WH Question Validator <br />
+    <small>(Present Continuous Negative)</small>
+  </div>
 
-            <label for="pregunta2"> Pregunta 2:</label>
-            <input type="text" id="pregunta2" required>
-            <br><br>
+  <!-- Botón toggle modo claro/oscuro -->
+  <label class="switch">
+    <input type="checkbox" id="toggle-theme" />
+    <span class="slider round"></span>
+  </label>
 
-            <label for="pregunta3"> Pregunta 3:</label>
-            <input type="text" id="pregunta3" required>
-            <br><br>
+  <div class="container">
+    <p>Write 5 WH questions using the correct structure.</p>
 
-            <label for="pregunta4"> Pregunta 4:</label>
-            <input type="text" id="pregunta4" required>
-            <br><br>
+    <form id="question-form">
+      <div class="questions">
+        <label>Question 1: <input type="text" name="q1" required></label>
+        <label>Question 2: <input type="text" name="q2" required></label>
+        <label>Question 3: <input type="text" name="q3" required></label>
+        <label>Question 4: <input type="text" name="q4" required></label>
+        <label>Question 5: <input type="text" name="q5" required></label>
+      </div>
+      <button type="submit">Validate</button>
+    </form>
 
-            <label for="pregunta5"> Pregunta 5:</label>
-            <input type="text" id="pregunta5" required>
-            <br><br>
+    <div id="result" class="result"></div>
+  </div>
 
-            <button type="submit">Validar Preguntas</button>
-        </form>
+  <footer class="footer-text">
+    Validador de presente continuo negativo
+  </footer>
 
-        <div class="result" id="result"></div>
-    </div>
-
-    <script src="app.js"></script>
-
+  <script src="js/validator.js"></script>
+  <script src="js/theme-toggle.js"></script>
 </body>
 </html>
